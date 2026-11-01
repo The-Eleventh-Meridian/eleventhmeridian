@@ -1,0 +1,112 @@
+:root{
+  --paper:#f4efe8;
+  --paper-2:#efe7dc;
+  --blush:#efd9dd;
+  --ink:#171412;
+  --muted:#6f655f;
+  --line:rgba(23,20,18,.12);
+  --accent:#b8768e;
+  --shadow:0 22px 70px rgba(30,18,15,.08);
+  --wordmark:"Cinzel", Georgia, serif;
+  --display:"Barlow Condensed", Arial, sans-serif;
+  --body:"Inter", Arial, sans-serif;
+}
+*,:before,:after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--accent);color:#fff}
+.skip-link{position:fixed;top:-80px;left:12px;background:#fff;padding:10px 12px;z-index:200}.skip-link:focus{top:12px}
+
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;color:#f9f5f0;background:#10202a}
+.hero-media,.hero-gif,.hero-overlay{position:absolute;inset:0}
+.hero-gif{width:100%;height:100%;object-fit:cover}
+.hero-overlay{background:linear-gradient(to bottom, rgba(8,16,22,.22), rgba(8,16,22,.48));pointer-events:none}
+.hero-content{position:relative;z-index:2;text-align:center;padding:52px 22px 86px;max-width:1100px}
+.hero-intro{margin:0 0 18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.92}
+.hero-wordmark{margin:0;font-family:var(--wordmark);font-weight:500;letter-spacing:-.05em;line-height:.92;text-transform:uppercase}
+.hero-wordmark span{display:block;font-size:clamp(3.2rem,9.6vw,8.7rem)}
+.hero-tagline{margin:14px 0 24px;font-family:"Cormorant Garamond", Georgia, serif;font-style:italic;font-size:clamp(1.9rem,3.2vw,3rem);letter-spacing:.02em}
+.hero-links{display:flex;justify-content:center;gap:14px;align-items:center;flex-wrap:wrap;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.hero-links a{border-bottom:1px solid rgba(255,255,255,.32);padding-bottom:3px}
+.hero-scroll{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:2;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.38)}
+
+.index-trigger{position:fixed;right:18px;top:18px;z-index:80;background:rgba(244,239,232,.92);backdrop-filter:blur(10px);border:1px solid rgba(23,20,18,.12);border-radius:999px;padding:11px 16px;color:var(--ink);font-size:11px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;box-shadow:var(--shadow)}
+.overlay-nav{position:fixed;inset:0;z-index:75;background:rgba(22,18,16,.62);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .24s ease}
+.overlay-nav.is-open{opacity:1;pointer-events:auto}
+.overlay-nav__panel{position:absolute;top:18px;right:18px;width:min(420px,calc(100vw - 36px));background:var(--paper);color:var(--ink);padding:22px;border-radius:28px;box-shadow:var(--shadow)}
+.overlay-nav__top,.section-topline,.section-bottomline{display:flex;justify-content:space-between;gap:18px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.overlay-nav__links{display:grid;gap:10px;margin:18px 0}.overlay-nav__links a{display:grid;grid-template-columns:34px 1fr;align-items:end;gap:12px;border-bottom:1px solid var(--line);padding:10px 0}
+.overlay-nav__links small{font-size:10px;color:var(--muted);letter-spacing:.16em}.overlay-nav__links span{font-family:var(--display);font-size:2.3rem;line-height:.95;letter-spacing:-.03em;text-transform:uppercase}
+.overlay-nav__bottom{padding-top:10px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+
+.section{padding:72px min(5vw,52px) 80px}
+.manifesto,.services{background:var(--paper)}
+.journal,.inquiry{background:var(--paper-2)}
+.eyebrow{margin:0 0 16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.display-title{margin:0;font-family:var(--display);font-weight:700;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;font-size:clamp(3.2rem,8vw,7rem)}
+.display-title--wide{max-width:none}
+.lead{font-family:"Cormorant Garamond", Georgia, serif;font-size:clamp(1.5rem,2vw,2rem);line-height:1.22;margin:18px 0 18px;max-width:27rem}
+.body-copy{max-width:33rem;line-height:1.8;color:var(--muted)}
+
+.manifesto-grid{display:grid;grid-template-columns:minmax(320px,.94fr) minmax(320px,1.06fr);gap:min(6vw,68px);align-items:start;margin-top:28px}
+.manifesto-collage{position:relative;min-height:980px}
+.card{position:absolute;background:#fff;padding:10px;box-shadow:var(--shadow)}
+.card img{width:100%;height:100%;object-fit:cover}
+.card figcaption{padding-top:8px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.card-main{right:0;top:0;width:min(34vw,430px)}
+.card-lotus{left:0;top:235px;width:min(19vw,230px)}
+.card-sea{left:110px;top:515px;width:min(40vw,510px)}
+
+.journal-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px}
+.editorial-board{display:grid;grid-template-columns:1.05fr .9fr .78fr;grid-template-rows:auto auto auto;gap:18px;align-items:start}
+.board-copy,.quote-block,.board-image{background:#fff;padding:16px;box-shadow:var(--shadow)}
+.board-image img{width:100%;height:100%;object-fit:cover}
+.board-image--orange{grid-column:2/4;grid-row:1;align-self:stretch}
+.board-image--orange img{aspect-ratio:16/9}
+.board-image--lounge{grid-column:1/2;grid-row:2/span 2}
+.board-image--lounge img{aspect-ratio:4/5}
+.board-image--blue{grid-column:3/4;grid-row:2/span 2}
+.board-image--blue img{aspect-ratio:4/5}
+.board-copy--left{grid-column:1/2;grid-row:1}
+.board-copy--right{grid-column:2/3;grid-row:2}
+.board-kicker{margin:0 0 12px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.board-copy p:last-child{margin:0;line-height:1.8;color:var(--muted)}
+.quote-block{grid-column:2/3;grid-row:3;font-family:var(--display);font-size:clamp(2rem,4vw,3.2rem);line-height:.95;text-transform:uppercase}
+
+.services-heading{margin-top:24px;margin-bottom:26px}
+.service-list{border-top:1px solid var(--ink)}
+.service-item{display:grid;grid-template-columns:86px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
+.service-meta{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:8px}
+.service-content h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(2rem,3.6vw,3.4rem);line-height:.94;text-transform:uppercase;letter-spacing:-.03em}
+.service-content p{max-width:42rem;line-height:1.8;color:var(--muted);margin:0 0 14px}
+.service-content ul{list-style:none;padding:0;margin:0}.service-content li{padding:9px 0;border-bottom:1px solid var(--line);line-height:1.6}.service-content li:before{content:'↗';padding-right:12px;color:var(--accent)}
+.services-note{color:var(--muted);font-style:italic;margin:18px 0 0}
+
+.inquiry-grid{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(320px,1.1fr);gap:min(6vw,58px);align-items:center}
+.inquiry-image img{width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow)}
+.inquiry-link{display:inline-block;margin-top:18px;padding-bottom:5px;border-bottom:1px solid var(--ink);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:12px}
+
+@media (max-width: 980px){
+  .manifesto-grid,.inquiry-grid,.journal-head,.editorial-board{grid-template-columns:1fr;display:grid}
+  .manifesto-collage{min-height:auto;display:grid;gap:16px}
+  .card{position:relative;inset:auto !important;width:100% !important}
+  .editorial-board{grid-template-rows:auto;gap:16px}
+  .board-image--orange,.board-image--lounge,.board-image--blue,.board-copy--left,.board-copy--right,.quote-block{grid-column:auto;grid-row:auto}
+  .journal-head{gap:14px}
+  .journal-head .display-title{max-width:10ch}
+  .inquiry-grid{gap:22px}
+}
+@media (max-width: 680px){
+  .section{padding:58px 18px 66px}
+  .hero-intro,.eyebrow{font-size:10px}
+  .hero-links{font-size:10px;gap:10px}
+  .index-trigger{right:14px;top:14px;padding:10px 14px}
+  .overlay-nav__panel{right:14px;top:14px;width:calc(100vw - 28px)}
+  .overlay-nav__links span{font-size:1.9rem}
+  .display-title{font-size:clamp(2.6rem,12vw,4.9rem)}
+  .service-item{grid-template-columns:1fr;gap:10px}
+  .footer-links{flex-direction:column;gap:10px}
+}
